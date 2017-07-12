@@ -33,7 +33,7 @@
 		(function(){
 			$("#button").on("click", function(){
 				let link = $("#link").val();
-				let ovrLink = "<div><a href='ovrweb:'" + link + "'>" + link + "</a></div>";
+				let ovrLink = "<div><a href='ovrweb:" + link + "'>" + link + "</a></div>";
 				console.log(ovrLink);
 				$("#links").append(ovrLink);
 			});
