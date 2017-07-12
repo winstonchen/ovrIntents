@@ -1,3 +1,42 @@
-<div>
-	<a href="ovrweb:https://aframe.io/aframe/examples/showcase/link-traversal/">Link Traversal in Aframe</a>
-</div>
+<!Doctype html>
+<head>
+	<title>Oculus VR Intent</title>
+	<style>
+		#button {
+			background-color:#5bc0de;
+			color: #ffffff;
+			width: 75px;
+			border-radius: 10px;
+			cursor:pointer;
+			text-align:center;
+			display: inline-block;
+		}
+	</style>
+	<script src="jquery-3.1.1.min.js"></script>
+</head>
+<body>
+	<h1>Launch Oculus Carmel Developer Preview with a Specified URL</h1>
+	<div>
+		<a href="ovrweb:https://aframe.io/aframe/examples/showcase/link-traversal/">Link Traversal in Aframe</a>
+	</div>
+	<div id="links">
+	</div>
+	<br>
+	<input id="link" type="text" name = "link" placeholder="enter link here"></input>
+	<span>
+		<p id = "button">
+			Add Link
+		</p>
+	</span>
+	<script>
+		(function(){
+			$("#button").on("click", function(){
+				let link = $("#link").val();
+				let ovrLink = "<div><a href='ovrweb:'" + link + "'>" + link + "</a></div>";
+				console.log(ovrLink);
+				$("#links").append(ovrLink);
+			});
+		})();
+	</script>
+</body>
+</html>
